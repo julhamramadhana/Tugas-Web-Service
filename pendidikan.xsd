@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="dosen">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="datadiri"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="datadiri">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="nik"/>
+                <xs:element ref="nama"/>
+                <xs:element ref="jeniskelamin"/>
+                <xs:element ref="tempatlahir"/>
+                <xs:element ref="tgllahir"/>
+                <xs:element ref="agama"/>
+                <xs:element ref="pendidikan"/>
+                <xs:element ref="alamat"/>
+                <xs:element ref="matkul"/>
+                <xs:element ref="email"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="nik" type="xs:integer"/>
+    <xs:element name="nama" type="xs:string"/>
+    <xs:element name="jeniskelamin" type="xs:NCName"/>
+    <xs:element name="tempatlahir" type="xs:NCName"/>
+    <xs:element name="tgllahir" type="xs:string"/>
+    <xs:element name="agama" type="xs:NCName"/>
+    <xs:element name="pendidikan" type="xs:NCName"/>
+    <xs:element name="alamat" type="xs:string"/>
+    <xs:element name="matkul" type="xs:string"/>
+    <xs:element name="email">
+    	<xs:simpleType>
+    		<xs:restriction base="xs:string">
+    			<xs:pattern
+    				value="[_\-a-zA-Z0-9\.\+]+@[a-zA-Z0-9](\.?[\-a-zA-Z0-9]*[a-zA-Z0-9])*">
+    			</xs:pattern>
+    		</xs:restriction>
+    	</xs:simpleType>
+    </xs:element>
+</xs:schema>
